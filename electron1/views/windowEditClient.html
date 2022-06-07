@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../modules/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editar cliente</h1>
+    <div id="formulario">
+        <form id="form" class="row g-3 needs-validation " novalidate>
+            <div class="col-md-4">
+              <label for="nombre" class="form-label">Nombre(s)</label>
+              <input type="text" class="form-control" id="nombre" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="pais" class="form-label">Pais de origen</label>
+              <input type="text" class="form-control" id="pais" value="" required>
+              <div class="valid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="numero" class="form-label">Numero de telefono</label>
+              <input class="form-control" type="tel" name="number" id="numero">
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="correo" class="form-label">Correo electronico</label>
+              <input type="email" class="form-control" id="correo" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="inversion" class="form-label">Inversión</label>
+              <div class="d-flex">
+                <input class="form-control w-75" type="tel" name="inversion" id="inversion">
+                <select class="form-select w-25" id="divisa" name="ss" title="a" required>
+                  <option selected value="MXN">MXN</option>
+                  <option value="USD">USD</option>
+                </select>
+              </div>
+              <div class="invalid-feedback">
+              </div>
+          </div>
+            <div class="col-md-12">
+                <label for="modalidad" class="form-label">Modalidad de inversión</label>
+                <select class="form-select" id="modalidad" required>
+                  <option selected disabled value="">Selecciona una opcion...</option>
+                  <option value="1pago">Pago en una sola exhibición</option>
+                  <option value="3pago">3 pagos</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="forma" class="form-label">Forma de inversión</label>
+                <select class="form-select" id="forma" required>
+                  <option selected disabled value="">Selecciona una opcion...</option>
+                  <option value="Transferencia">Transferencia</option>
+                  <option value="PayPal">PayPal</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+            <div id="btnform" class="col-12 mt-3 mb-4">
+              <button  class="btn btn-primary" type="submit">Guardar cambios</button>
+            </div>
+          </form>
+
+    </div>
+
+    <style>
+        #formulario{
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        h1{
+            margin: 0px auto;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+    
+    <script type="module" src="../clientes.js"></script>
+</body>
+</html>

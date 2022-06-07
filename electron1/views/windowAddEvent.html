@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Agregar un evento</h1>
+    <div id="formulario">
+        <form id="form" class="row g-3 needs-validation d-flex justify-center " novalidate>
+            <div class="col-md-4">
+              <label for="nombre" class="form-label">Nombre del evento</label>
+              <input type="text" class="form-control" id="nombre" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="start">Fecha de inicio:</label>
+              <input type="date" id="start" name="trip-start"
+                    value=""
+                    min="2018-01-01" max="2030-12-31">
+            </div>
+            <div class="col-md-3">
+              <label for="end">Fecha de termino:</label>
+              <input type="date" id="end" name="trip-end"
+                    value=""
+                    min="2018-01-01" max="2030-12-31">
+            </div>
+
+            <div class="col-md-4">
+              <label for="nombre" class="form-label">Agregar descripcion:</label>
+              <input type="text" class="form-control" id="descripcion" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            
+
+            
+
+            <div class="col-md-3 w-100 mt-4">
+              <label for="color">Color:</label>
+              <div id="picker" class="ml-auto"></div>
+            </div>
+
+
+            <div id="btnform" class="col-12 mt-3 mb-4 ">
+              <button id="butn"  class="btn btn-primary m-2 " type="submit">Agregar evento</button>
+            </div>
+          </form>
+
+    </div>
+
+    <style>
+        #formulario{
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        h1{
+            margin: 0px auto;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+    
+    <script type="module" src="../events.js"></script>
+</body>
+</html>

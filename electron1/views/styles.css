@@ -1,0 +1,462 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+
+
+body aside{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 15%;
+    border: 1px solid black;
+    height: 100vh;
+    color: white;
+    padding: 5px;
+    padding-top: 20px;
+   
+}
+
+aside ul{
+    text-decoration: none;
+    list-style: none;
+    height: 100%;
+    padding: 0px;
+}
+
+aside ul li{
+    width: 100%;
+    font-size: 20px;
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+aside ul li:hover{
+    background-color: rgb(2, 2, 134);
+}
+
+aside ul li a{
+    padding: 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+aside ul li a:hover{
+    color: white;
+}
+
+aside ul li a svg{
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+/* contenido */
+.contenido{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 85%;
+    background-color: rgb(224, 224, 224);
+    overflow: hidden;
+}
+#calendar{
+    background-color: white;
+
+}
+#tarjetas{
+    width: 98%;
+    height: 300px;
+    
+}
+#miembros{
+    flex-basis: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#accesoNotas{
+    flex-basis: 45%;
+    
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#parte2{
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+/* contenido */
+
+
+#title{
+    display: flex; 
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+#title h3{
+   font-size: 20px;
+}
+
+#title button{
+    font-size: 15px;
+    padding: 5px;
+    line-height: 20px;
+ }
+svg{
+    width: 20px;
+    padding: 2px;
+    margin-bottom: 5px;
+ }
+
+ #lista{
+     margin: 0px auto;
+     padding: 0px;
+ }
+
+ #lista svg,#listaCompleta svg{
+     width: 50px;
+     margin: 10px;
+     line-height: 17px;
+     padding: 0px;
+     margin
+}
+
+ #lista li,#listaCompleta li,#tituloslist2 li{
+     padding: 0px;
+     overflow: hidden;
+     list-style: none;
+     font-size: 12px;
+     line-height: 17px;
+     align-content: center;
+     align-items: center;
+     width:100%;
+ }
+ #listaCompleta,#tituloslist2{
+     padding: 10px;
+     background-color: white;
+     overflow: auto;
+ }
+
+
+ #listaCompleta>li,#tituloslist2>li{
+    border-bottom: 1px solid black;
+    padding: 2px;
+}
+
+
+#titulosdelista{
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+#tituloslist2{
+    width: 88%;
+    margin-left: -20px;
+ }
+
+ #tituloslist2 li{
+    border-bottom: none;
+    font-weight: bold;
+    text-transform: uppercase;
+
+ }
+
+ #lista h3{
+    font-size: 14px;
+}
+
+#lista ul li{
+    overflow: hidden;
+}
+#lista ul li:hover{
+    transform: tra;
+}
+
+#column{
+    width: 100%;
+}
+
+#lista button,#listaCompleta button{
+    font-size: 12px;
+    margin: 10px;
+    
+}
+#tituloslist{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: -10px;
+}
+
+/* pagClientes */
+
+body .contenidoclientes{
+    flex-basis: 85%;
+    background-color: rgb(224, 224, 224);
+    padding: 60px;
+    height: 100vh;
+    overflow: scroll;
+}
+#titleclientes{
+    display: flex; 
+    padding: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+ 
+ .card:hover{
+    width: 300px;
+    box-shadow: 2px 2px 15px #614209;
+    margin: 10px;
+    color: black;
+    
+ }
+ .card{
+     transition: all 200ms;
+ }
+
+
+ .card .representacion{
+     margin-left: 130px;
+     width: 140px;
+     margin-top: 2px;
+ }
+ 
+ .card .representaciones{
+    margin-left: 130px;
+    width: 120px;
+    margin-top: 2px;
+}
+ .contenido .card-clientes{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%); 
+}
+ .contenido .titulo{
+    font-size: 25px;
+    text-decoration: none;
+ }
+ 
+
+ .contenido .cantidad{
+text-align: center; 
+}
+
+ .contenido .card-ingresos{
+    background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+ }
+ .contenido .card-agenda{
+    height: 275px;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+ }
+ .contenido .card-notas{
+    
+    height: 275px;
+    background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+ }
+    
+ .contenido .card-recuerda{
+     height: 275px;
+    background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+ }
+
+ #calendar{
+    height: 100vh;
+ }
+
+ #tarjetas-ingresos{
+    margin-top: 50px;
+    margin-left: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+   
+ }
+ #ingresosmxn{
+    width: 725px;
+    height: 300px;
+    margin-right: 200px;
+    background-color: #EFDDD3;
+}
+
+#egresosmxn{
+    width: 740px;
+    height: 300px;
+    margin-right: 200px;
+    background-color: #E9C495;
+}
+
+.ingresostitulo{
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(133, 64, 14);
+}
+.representacioningre{
+    margin-left: 450px ;
+    width: 250px;
+    margin-bottom: 0px;
+    color: rgb(39, 39, 39);
+}
+.dinero{
+    width: auto;
+    font-size: 25px;
+    color: #614209;
+    margin-left: 40px;
+    margin-top: 0px;
+}
+#tablas{
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#agregarIngresos{
+    flex-basis: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+.svg-ingresos{
+    width: 60px;
+}
+
+
+
+#agregarEgresos{
+    flex-basis: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#buscador-egreso{
+    margin-left: 10px;
+    width: 600px;
+}
+
+#buscador-ingresos{
+    margin-left: 10px;
+    width: 600px;
+}
+
+#tituloslist3{
+    list-style: none;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#tituloslist3 li{
+    width: 20%;
+}
+
+#listaegresos{
+    
+}
+#listegresos li{
+    list-style: none;
+    margin-left: 20px;
+    margin-right: 45px;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+}
+
+#gastol{
+    width: 80%;
+    height: 80px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border: 1px solid black ;
+    border-radius: 10px;
+    background-color: #ebe4dd;
+
+}
+
+#gastol p{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.runing #gastol{
+    display: none;
+}
+
+#lista-ingresos li{
+    list-style: none;
+    margin-left: 20px;
+    margin-right: 45px;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+}
+
+#liingresosclientes li{
+    list-style: none;
+    margin-left: 20px;
+    margin-right: 45px;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+}
+#grafica{
+    background-color: #dbcab4;
+    height: 700px;
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#myChart{
+    margin: 20px;
+    width: 600px;
+    background-color: #dbcab4;
+    padding: 20px;
+}
+
+#grafica1{
+    background-color:honeydew;
+    height: 600px;
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;margin: 30px;
+}
+#myChart2{
+    margin: 20px;
+    width: 800px;
+    background-color: honeydew;
+    padding: 20px;
+}
+
+#grafica2{
+    background-color:#ecd885;
+    height: 600px;
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;margin: 30px;
+}
+#myChart3{
+    margin: 20px;
+    width: 800px;
+    background-color: #ecd885;
+    padding: 20px;
+}
