@@ -1,5 +1,6 @@
 
-const iro = require('@jaames/iro');
+const iro = require("@jaames/iro");
+//import iro from '@jaames/iro'
 const electron=require("electron");
 import {cliente,ui} from "./app.js"
 const form= document.querySelector('#form')
