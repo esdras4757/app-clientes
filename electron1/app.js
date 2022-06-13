@@ -31,6 +31,7 @@ const buscador = document.querySelector('#buscador');
 const btneliminargasto = document.querySelector('#listegresos');
 const busegreso = document.querySelector('#buscador-egreso');
 const totalgasto = document.querySelector('#totaldefinitivo');
+const totalgasro2 = document.querySelector('#egresos');
 const listaingresos = document.querySelector('#lista-ingresos');
 const btneliminaringresos = document.querySelector('#lista-ingresos');
 const btneditaringreso = document.querySelector('#liingresosclientes')
@@ -164,23 +165,22 @@ document.addEventListener('DOMContentLoaded', () => {
         ingresos.textContent = `+${total} MXN`;
     }
 
-   
-    
-
+  
     
     let gastado = 0
-    if(totalgasto){
-       listaGastos.forEach(element => {
-           gastado += parseFloat(element.total)
-       });
+    
 
-       const  gastol= document.createElement('h4')
-        gastol.textContent = `Total gasto: -${gastado}`
-        gastol.classList.add = "p-5 text-center"
-       totalgasto.appendChild(gastol) 
+    
+    if(totalgasro2){
+        listaGastos.forEach(element => {
+            gastado += parseFloat(element.total)
+        });
+ 
+        const  gastol= document.createElement('h3')
+         gastol.textContent = `-$${gastado} MXN`
+         gastol.classList.add = "p-5 text-center"
+        totalgasro2.appendChild(gastol) 
     }
-
-   
 
     eventListeners();
     ui.mostrarClientes()
