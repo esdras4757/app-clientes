@@ -1,6 +1,5 @@
 
-const iro = require("@jaames/iro");
-//import iro from '@jaames/iro'
+const iro = require('@jaames/iro');
 const electron=require("electron");
 import {cliente,ui} from "./app.js"
 const form= document.querySelector('#form')
@@ -11,11 +10,15 @@ const descripcion=document.querySelector('#descripcion')
 const color=document.querySelector('#color')
 var liestaEventos=JSON.parse(localStorage.getItem('eventos'))
 const ipc=electron.ipcRenderer
+const titulo=document.querySelector('h1')
+const textobotonsucces=document.querySelector('#butn')
 var modoEdicion=false
 var idedicion
 if (!liestaEventos) {
   liestaEventos=[]
 }
+
+
 
 
 
@@ -37,14 +40,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     var dia2=`0${hoy.getDate()+2}`
   } 
   else{
-    dia=`${hoy.getDate()+1}`
-    var dia2=`${hoy.getDate()+2}`
+    dia=`${hoy.getDate()}`
+    var dia2=`${hoy.getDate()+1}`
   }
   ipc.on('recibirId2',(e,id)=>{
     console.log(id)
-    modoEdicion=true
+    modoEdicion=true;
     idedicion=id
     llenarFormulario(id)
+    titulo.textContent='Editar evento'
+    textobotonsucces.textContent='Guardar cambios'
 })
   
 
@@ -57,6 +62,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   addEventListeners()
 })
+
 
 
 function addEventListeners(){
@@ -128,7 +134,6 @@ const btnform=document.querySelector('#btnform')
 }
 
 if(modoEdicion==false) {
-  btnform.textContent='Agregar Evento'
  console.log(EventObj);
 liestaEventos.push(EventObj)
 localStorage.setItem('eventos',JSON.stringify(liestaEventos))

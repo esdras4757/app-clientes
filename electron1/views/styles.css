@@ -12,16 +12,15 @@ body{
 
 
 body aside{
-    background-color: rgb(20, 20, 20);
+    background-image: linear-gradient(-60deg, #daabcf 0%, #dd2d9a 100%); 
+
     display: flex;
     flex-direction: column;
-    flex-basis: 15%;
+    flex-basis: 13%;
     border: 1px solid rgb(224, 216, 216);
     height: 100vh;
     color: rgb(236, 230, 230);
-    padding: 5px;
     padding-top: 20px;
-   
 }
 
 aside ul{
@@ -31,24 +30,44 @@ aside ul{
     padding: 0px;
 }
 
+aside h4{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
 aside ul li{
     width: 100%;
-    font-size: 20px;
-    background-color: rgb(20, 20, 20);
+    font-size: 18px;
     cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+aside ul li svg{
+    width: 20%;
+    text-align: center;
+    margin: 0px !important;
+    
 }
 
 aside ul li:hover{
-    background-color: rgb(235, 146, 235);
+    background-color: rgba(141, 74, 141, 0.493);
+}
+
+aside ul li:hover a{
+    font-size: 22px;
 }
 
 aside ul li a{
-    padding: 20px;
+    padding: 35px 15px;
     display: block;
     color: rgb(236, 222, 222);
     text-decoration: none;
     width: 100%;
     height: 100%;
+    transition: all 300ms;
 }
 aside ul li a:hover{
     color: rgb(241, 220, 220);
@@ -63,7 +82,7 @@ aside ul li a svg{
 .contenido{
     display: flex;
     flex-flow: column nowrap;
-    width: 85%;
+    width: 88%;
     background-color: rgb(238, 231, 236);
     overflow: hidden;
 }
@@ -119,6 +138,9 @@ aside ul li a svg{
     font-size: 15px;
     padding: 5px;
     line-height: 20px;
+    background-color: rgb(141, 74, 141);
+    border: none;
+    color: white;
  }
 svg{
     width: 20px;
@@ -191,6 +213,14 @@ svg{
     transform: tra;
 }
 
+#btnAgregarCliente{
+    background-color: rgb(141, 74, 141);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 #column{
     width: 100%;
 }
@@ -199,6 +229,15 @@ svg{
     font-size: 12px;
     margin: 10px;
     
+
+}
+
+.editar{
+    background-image: linear-gradient(to top, #ba40be 0%, #8900fa 100%);
+}
+
+.eliminar{
+    background-image: linear-gradient(to top, #ba40be 0%, #fa0000 100%);
 }
 #tituloslist{
     font-weight: bold;
@@ -209,7 +248,7 @@ svg{
 /* pagClientes */
 
 body .contenidoclientes{
-    flex-basis: 85%;
+    flex-basis: 88%;
     background-color: rgb(224, 224, 224);
     padding: 60px;
     height: 100vh;
@@ -281,6 +320,14 @@ text-align: center;
 
  #calendar{
     height: 100vh;
+ }
+
+ #buscar{
+    border: 1px solid rgb(141, 74, 141);
+ }
+
+ #buscar:focus{
+    box-shadow: 0px 0px 8px rgb(116, 61, 116);;
  }
 
  #tarjetas-ingresos{
@@ -462,3 +509,56 @@ text-align: center;
     background-color: #ecd885;
     padding: 20px;
 }
+
+.fc-event-title-container{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+
+.bi-x-circle{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;z-index: 5;
+}
+
+.bi-x-circle svg{
+   height: 100%;
+   width: 100%;
+   padding: 0px;
+   z-index: 3;
+}
+
+.fc-event[href], .fc-event.fc-event-draggable{
+    cursor: grab;
+}
+
+.fc-event[href], .fc-event.fc-event-draggable:active{
+    cursor: grabbing;
+}
+
+.btnVerTodos{
+
+    background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+}
+
+.fc-toolbar-chunk Button{
+    background-color: rgb(128, 68, 128) !important;
+
+}
+
+:root {
+    --fc-border-color: rgb(128, 68, 128,.3);
+    --fc-small-font-size: .85em;
+  }
+
+  .fc-daygrid-day-number{
+    color: #ec45ac;
+  }
+  .fc-col-header-cell-cushion {
+    color: rgb(170, 35, 211);
+  }
