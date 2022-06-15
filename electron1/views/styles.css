@@ -108,6 +108,7 @@ aside ul li a svg{
     padding: 20px;
     border: 1px solid #ccc;
     background-color: white;
+    max-height: 512px;
 }
 
 #parte2{
@@ -265,14 +266,16 @@ body .contenidoclientes{
 }
  
  .card:hover{
-    width: 300px;
+    
     box-shadow: 2px 2px 15px #614209;
-    margin: 10px;
+    margin: 10px 20px;
     color: black;
+    
     
  }
  .card{
-     transition: all 200ms;
+     transition: all 500ms;
+
  }
 
 
@@ -577,3 +580,6 @@ text-align: center;
   .fc-col-header-cell-cushion {
     color: rgb(170, 35, 211);
   }
+
+
+  

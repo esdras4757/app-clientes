@@ -43,6 +43,18 @@ function clientenuevo(e){
             return
         }
 
+        if(isNaN(numero.value) ){
+            ui.alerta('Solo puede ingresar numeros en el campo "numero de telefono"','error')
+            
+            return
+        }
+        if(isNaN(inversion.value) ){
+            ui.alerta('Solo puede ingresar numeros en el campo "Inversion"','error')
+            
+            return
+        }
+
+
     if(modoEdicion==false){
         
         cliente.agregar(nombre.value,apellido.value,pais.value,numero.value,correo.value,inversion.value,divisa.value,modalidad.value,forma.value)

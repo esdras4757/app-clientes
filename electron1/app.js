@@ -43,7 +43,7 @@ const btngrafica2 = document.querySelector('#btngrafica2');
 
 var divisaTolocalstorage = {};
 const dia = new Date()
-const numeroDelDia = dia.getDay()
+const numeroDelDia = dia.getDate()
 var valordivisa = 0;
 // documento listo 
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ingresos) {
         listaclientes.forEach(element => {
             if (element.divisa == 'USD') {
-                var valorConvertidoMXN = (element.inversion * consultarValorDolar())
+                var valorConvertidoMXN = (element.inversion * element.tipoCambio)
                 total += parseFloat(valorConvertidoMXN)
             }
             else {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         listaIngresos.forEach(element => {
             total += parseFloat(element.totalin)
         })
-        ingresos.textContent = `+${total} MXN`;
+        ingresos.textContent = `+${total.toFixed(2)} MXN`;
     }
 
   
@@ -279,18 +279,21 @@ class UI {
         msjhtml.classList.add('p-3', 'm-3', 'text-center', 'alert')
         msjhtml.textContent = mensaje
 
-        if (tipo == 'error') {
-            msjhtml.classList.add('alert-danger')
+        if (!nota.querySelector('.alert')){
+            if (tipo == 'error') {
+                msjhtml.classList.add('alert-danger')
+            }
+            else {
+                msjhtml.classList.add('alert-success')
+            }
+    
+            nota.insertBefore(msjhtml, document.querySelector('#btnota'))
+    
+            setTimeout(() => {
+                msjhtml.remove()
+            }, 2000);
         }
-        else {
-            msjhtml.classList.add('alert-success')
-        }
-
-        nota.insertBefore(msjhtml, document.querySelector('#btnota'))
-
-        setTimeout(() => {
-            msjhtml.remove()
-        }, 2000);
+        
 
     }
 
@@ -304,18 +307,23 @@ class UI {
         mensajehtml.classList.add('p-3', 'text-center', 'alert')
         mensajehtml.textContent = mensaje
 
-        if (tipo == 'error') {
-            mensajehtml.classList.add('alert-danger')
-        }
-        else {
-            mensajehtml.classList.add('alert-success')
+        if (!formulario.querySelector('.alert')){
+            if (tipo == 'error') {
+                mensajehtml.classList.add('alert-danger')
+            }
+            else {
+                mensajehtml.classList.add('alert-success')
+            }
+    
+            formulario.insertBefore(mensajehtml, document.querySelector('#btnform'))
+    
+            setTimeout(() => {
+                mensajehtml.remove()
+            }, 2000);
+
         }
 
-        formulario.insertBefore(mensajehtml, document.querySelector('#btnform'))
-
-        setTimeout(() => {
-            mensajehtml.remove()
-        }, 2000);
+        
 
     }
 
@@ -361,7 +369,8 @@ class UI {
             listaclientesparcial.reverse().forEach(cliente => {
 
                 if (cliente.divisa == 'USD') {
-                    var clien = (cliente.inversion * consultarValorDolar()).toFixed(2);
+                    var clien = (cliente.inversion * cliente.tipoCambio).toFixed(2);
+                    console.log(cliente.inversion * cliente.tipoCambio);
                 } else {
                     clien = (cliente.inversion / 1).toFixed(2);
                 }
@@ -409,11 +418,15 @@ class UI {
             }
             lista.reverse().forEach(cliente => {
 
+                console.log(cliente.tipoCambio);
                 if (cliente.divisa == 'USD') {
-                    var clien = (cliente.inversion * consultarValorDolar()).toFixed(2);
+                    var clien = (cliente.inversion*cliente.tipoCambio).toFixed(2);
                 } else {
                     clien = (cliente.inversion / 1).toFixed(2);
+                    
                 }
+
+                
 
                 const clientehtml = document.createElement('li')
                 clientehtml.classList.add('list-unstyled', 'd-flex')
@@ -658,6 +671,7 @@ class Clientes {
 
         const objetoCliente = {
             nombre,
+            tipoCambio:consultarValorDolar(),
             apellido,
             pais,
             numero,
@@ -683,6 +697,7 @@ class Clientes {
         const objetoCliente = {
             nombre,
             apellido,
+            tipoCambio:consultarValorDolar(),
             pais,
             numero,
             correo,
@@ -1055,16 +1070,20 @@ function consultarValorDolar() {
 
 function switchDLSMXN(e) {
     var valor;
+    
     const id = e.target.parentElement.parentElement.querySelector('#nombre').dataset.id
+
 
     const lista = JSON.parse(localStorage.getItem('clientes'))
     const listaFilter = lista.filter((element) => {
         return element.id == id
     })
 
+    console.log(listaFilter);
+
     if (listaFilter[0].divisa == 'USD') {
 
-        valor = listaFilter[0].inversion * consultarValorDolar()
+        valor = listaFilter[0].inversion * listaFilter[0].tipoCambio
     }
     else {
         valor = listaFilter[0].inversion
@@ -1072,7 +1091,7 @@ function switchDLSMXN(e) {
 
 
     if (e.target.value == 'USD') {
-        e.target.parentElement.querySelector('a').textContent = (valor / consultarValorDolar()).toFixed(2)
+        e.target.parentElement.querySelector('a').textContent = (valor / listaFilter[0].tipoCambio).toFixed(2)
 
     }
     if (e.target.value == 'MXN') {

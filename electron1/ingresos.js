@@ -84,18 +84,21 @@ class UI{
         msjalerta.classList.add('p-3', 'm-3', 'text-center', 'alert')
         msjalerta.textContent = mensaje
 
-        if (tipo == 'error') {
-            msjalerta.classList.add('alert-danger')
-        }
-        else {
-            msjalerta.classList.add('alert-success')
-        }
-
-        formingreso.appendChild(msjalerta)
+        if (!formingreso.querySelector('.alert')) {
+            if (tipo == 'error') {
+                msjalerta.classList.add('alert-danger')
+            }
+            else {
+                msjalerta.classList.add('alert-success')
+            }
     
-        setTimeout(() => {
-            msjalerta.remove()
-        }, 2000);
+            formingreso.appendChild(msjalerta)
+        
+            setTimeout(() => {
+                msjalerta.remove()
+            }, 2000);
+        }
+        
 
     }
 }

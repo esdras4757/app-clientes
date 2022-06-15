@@ -18,6 +18,9 @@ app.on('ready',()=>{
     mainWindow=new BrowserWindow({
         width:4000,
         height:4000,
+        maximizable:true,
+        resizable:false,
+        movable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -28,10 +31,9 @@ app.on('ready',()=>{
 
     mainWindow.maximize();
 
-    
 
-    // const mainMenu=Menu.buildFromTemplate([])
-    // Menu.setApplicationMenu(mainMenu)
+    const mainMenu=Menu.buildFromTemplate([])
+    Menu.setApplicationMenu(mainMenu)
 
 })
 
@@ -69,6 +71,7 @@ ipcMain.on('agregarCliente', (event) => {
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -89,6 +92,7 @@ ipcMain.on('agregarNota', (event) => {
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -109,6 +113,7 @@ ipcMain.on('agregarIngreso', (event) => {
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -127,6 +132,7 @@ ipcMain.on('agregarEgreso', (event) => {
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -148,6 +154,7 @@ ipcMain.on('editarGasto' , (event , mensaje) =>{
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
