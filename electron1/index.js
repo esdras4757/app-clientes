@@ -68,7 +68,7 @@ if(process.env.NODE_ENV !=='production'){
 ipcMain.on('agregarCliente', (event) => {
     addClientWindow=new BrowserWindow({
         width:500,
-        height:500,
+        height:800,
         parent:mainWindow,
         modal:true,
         resizable:false,
@@ -179,6 +179,7 @@ ipcMain.on('editarIngresos' , (event , mensaje) =>{
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -199,6 +200,7 @@ ipcMain.on('editarNota' , (event , mensaje) =>{
         height:500,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -217,9 +219,10 @@ ipcMain.on('editarCliente', (event,mensaje) => {
     console.log(mensaje)
     addClientWindow=new BrowserWindow({
         width:500,
-        height:500,
+        height:800,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -239,9 +242,10 @@ ipcMain.on('editarCliente', (event,mensaje) => {
 ipcMain.on('agregarEvento', (event) => {
     const addEventWindow=new BrowserWindow({
         width:500,
-        height:500,
+        height:800,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -256,9 +260,10 @@ ipcMain.on('agregarEvento', (event) => {
 ipcMain.on('editarEvento', (event,mensaje) => {
     const addEventWindow=new BrowserWindow({
         width:500,
-        height:500,
+        height:800,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -286,6 +291,7 @@ ipcMain.on('grafica' , (event , mensaje) =>{
         height:800,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -309,6 +315,7 @@ ipcMain.on('grafica2' , (event , mensaje) =>{
         height:800,
         parent:mainWindow,
         modal:true,
+        resizable:false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

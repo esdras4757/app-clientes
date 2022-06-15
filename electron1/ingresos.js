@@ -30,6 +30,12 @@ function nuevoIngreso(e){
         return;
     }
 
+    if(isNaN(totalin.value) ){
+        iu.error('Solo se permiten numeros en el campo "Total"','error');
+        
+        return;
+    }
+
     if(moedicion==false){
         
         ingresos2.agregandoingreso(ingresonuevo.value, totalin.value)

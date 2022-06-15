@@ -30,6 +30,12 @@ function nuevoEgreso(e){
         return;
     }
 
+    if(isNaN(total.value) ){
+        iu.error('Solo se permiten numeros en el campo "Total"','error')
+        
+        return
+    }
+
     if(modedicion==false){
         
         gastos.agregandogastos(gastonuevo.value, total.value)
