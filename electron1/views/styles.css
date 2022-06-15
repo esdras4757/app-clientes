@@ -39,14 +39,14 @@ aside h4{
 
 aside ul li{
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     font-weight: bold;
     text-align: center;
 }
 
 aside ul li svg{
-    width: 20%;
+    width: 24%;
     text-align: center;
     margin: 0px !important;
     
@@ -57,7 +57,7 @@ aside ul li:hover{
 }
 
 aside ul li:hover a{
-    font-size: 22px;
+    font-size: 25px;
 }
 
 aside ul li a{
@@ -66,7 +66,7 @@ aside ul li a{
     color: rgb(236, 222, 222);
     text-decoration: none;
     width: 100%;
-    height: 100%;
+    height: 180px;
     transition: all 300ms;
 }
 aside ul li a:hover{
@@ -544,6 +544,16 @@ text-align: center;
 .btnVerTodos{
 
     background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+}
+
+.btngrafica{
+
+    background-image: linear-gradient(-225deg, #df8d84 0%, #fe5196 100%);
+}
+
+.btngrafica2{
+
+    background-image: linear-gradient(-225deg, #b182b8 0%, #8d3a82 100%);
 }
 
 .fc-toolbar-chunk Button{
